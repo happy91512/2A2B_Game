@@ -1,5 +1,5 @@
 import random
-
+import time
 ans_num=[]
 while len(ans_num)!=4:
     ran=random.randint(1,9)
@@ -8,13 +8,12 @@ while len(ans_num)!=4:
     else:
         continue  
 #make a random list for answer
-
+# print(ans_num)
 mes="{}A{}B"
-
 while True:
     num_A=0
     num_B=0
-    cin=input("輸入一個1000~9999的數字")
+    cin=input("輸入一個1000~9999的數字，各位數字不重複")
     cin_num=list(cin)
     if len(cin_num)==4:
         for x in range(0,4):
