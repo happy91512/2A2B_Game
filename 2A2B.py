@@ -21,6 +21,7 @@ while True:
             if str(cin_num[y]) in cin[:y]:
                 print("你輸入重複數字的四位數了")
                 error=True
+                break
     if len(cin_num)==4 and error ==False:
         for x in range(0,4):
             if int(cin_num[x])==ans_num[x]:
