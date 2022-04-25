@@ -8,7 +8,7 @@ while len(ans_num)!=4:
     else:
         continue  
 #make a random list for answer
-print(ans_num)
+count=0
 mes="{}A{}B"
 while True:
     num_A=0
@@ -17,9 +17,12 @@ while True:
     cin=input("輸入一個1000~9999的數字,各位數字不重複")
     cin_num=list(cin)
     if len(cin_num)==4:
+        if cin_num[0]=="0":
+            error=True
+            print("第一個數不為0")
         for y in range(1,4):
             if str(cin_num[y]) in cin[:y]:
-                print("你輸入重複數字的四位數了")
+                print("各位數字不重複")
                 error=True
                 break
     if len(cin_num)==4 and error ==False:
@@ -30,9 +33,10 @@ while True:
                 num_B+=1
         num_B=num_B-num_A 
         print(mes.format(num_A,num_B))
+        count=count+1
 
     if num_A==4:
-        print("恭喜答對，答案是"+cin)
+        print("恭喜答對，答案是"+cin+"，共猜了"+str(count)+"次！")
         break       
     if len(cin_num) != 4:
         print("四位數！！")
